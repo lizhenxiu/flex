@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    <title>flex_list</title>
+    <link rel="stylesheet" href="reset.css">
+    <style type="text/css" media="screen">
+        .menu{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+             /*定义为flexbox*/
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            /*设置主轴按行 且溢出自动换行*/
+            flex-flow: row wrap;
+        }
+        .menu li{width: 33.33333%;margin: 10px 0;text-align: center;}
+        /*.menu li:nth-child(1){
+             background-color: #39ADD1;
+         }*/
+        .menu .img {display:inline-block;width: 20px;height: 20px;background: #31BBEE;}
+        .menu .title{font-size: 14px;line-height: 1.2;}
+    </style>
+</head>
+<body>
+    <ul class="menu">
+         <li>
+            <div class="img"></div>
+            <div class="title">item title</div>
+        </li>
+         <li>
+            <div class="img"></div>
+            <div class="title">item title</div>
+        </li>
+         <li>
+            <div class="img"></div>
+            <div class="title">item title</div>
+        </li>
+         <li>
+            <div class="img"></div>
+            <div class="title">item title</div>
+        </li>
+         <li>
+            <div class="img"></div>
+            <div class="title">item title</div>
+        </li>
+    </ul>
+</body>
+</html>

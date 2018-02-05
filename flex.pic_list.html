@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    <title>flex_list</title>
+    <link rel="stylesheet" href="reset.css">
+    <style type="text/css" media="screen">
+        .flex-cont{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+        .contentList{
+            margin:10px 0;
+            width: 100%;
+            background-color: #FFF;
+            flex-flow:row wrap;
+            text-align:center;
+        }
+        .contentList li{
+            padding:10px;
+           /* width:50%;
+            width:25%;*/
+            width:33.33333%;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        .contentList .img{ 
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            width: 100%;
+        }
+        .contentList li img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 多行多列布局 -->
+    <ul class="contentList flex-cont">
+        <li>
+            <div class="img"><img src="images/cover1.jpg"/></div>
+            <div class="title">item title</div>
+        </li>
+        <li>
+            <div class="img"><img src="images/cover2.jpg"/></div>
+            <div class="title">item title</div>
+        </li>
+        <li>
+            <div class="img"><img src="images/cover3.jpg"/></div>
+            <div class="title">item title</div>
+        </li>
+        <li>
+            <div class="img"><img src="images/cover2.jpg"/></div>
+            <div class="title">item title</div>
+        </li>
+        <li>
+            <div class="img"><img src="images/cover1.jpg"/></div>
+            <div class="title">item title</div>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    <title>flex_tab</title>
+    <link rel="stylesheet" href="reset.css">
+    <style type="text/css" media="screen">
+    /*global*/
+    h3{
+        line-height: 36px;
+        height: 36px;
+        padding-left: 20px;
+        background: #f2f2f2;
+        margin:20px 0;
+    }
+    .f-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: #31BBEE;flex:none;
+    }
+    .f-btn{
+        width: 50px;
+        height:25px;
+        text-align: center;
+        background: #31BBEE;
+        margin: 10px;
+        line-height: 25px;
+        color: #fff;
+        /*子元素默认是可以伸缩的，需要写flex:none来禁止伸缩;
+        */flex:none;
+    }
+    h2{
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .flex-cont{
+        /*定义为flexbox*/
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+    }
+    .flex-item{
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        width: 0%;
+    }
+
+
+
+    /*tab*/
+    .flex-tab {
+        margin:10px 0;
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        background-color: #FFF;
+        /*子元素沿主轴对齐方式均分*/
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        /*子元素沿侧轴对齐方式垂直居中*/
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .flex-tab li{
+        width:0%;
+        /*旧版的使用比例伸缩布局时会导致盒子内容大小不等会导致无法‘等分’等布局。这个时候需要设置width:0%;
+        等把原始大小设置成0*/
+        position: relative;
+        display: block;
+        /*content-box：
+padding和border不被包含在定义的width和height之内。对象的实际宽度等于设置的width值和border、padding之和，即 ( Element width = width + border + padding )
+此属性表现为标准模式下的盒模型。
+border-box：
+padding和border被包含在定义的width和height之内。对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，即 ( Element width = width )*/
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        color: #777;
+        font-size: 16px;
+        border:1px solid #ddd;
+        border-left: none;
+        /*定义flexbox子元素的伸缩度*/
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    .flex-tab li:last-child{
+        border-right: none;
+    }
+    .flex-tab li a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .flex-tab li .tab-title{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        color: #777;
+    }
+    .flex-tab li.current .tab-title{
+        color: #259ade;
+    }
+    </style>
+</head>
+<body>
+    <h3>用flex做tab</h3>
+    <ul role="tablist" class="flex-cont flex-tab">
+        <li class="current">
+            <a href="javascript:void(0)" role="tab">
+                <span class="tab-title">item1</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" role="tab">
+                <span class="tab-title">item2</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" role="tab">
+                <span class="tab-title">item3</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" role="tab">
+                <span class="tab-title">item4</span>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>
